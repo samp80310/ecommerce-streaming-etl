@@ -1,0 +1,9 @@
+kafka:
+  bootstrap_servers: "localhost:9092"
+  topic: "ecommerce_orders"
+
+producer:
+  delay_seconds: 2
+
+logging:
+  level: INFO
