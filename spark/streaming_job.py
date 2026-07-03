@@ -1,5 +1,8 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, from_json
+from validation import get_valid_orders, get_invalid_orders
+valid_df = get_valid_orders(json_df)
+invalid_df = get_invalid_orders(json_df)
 
 from schemas import order_schema
 

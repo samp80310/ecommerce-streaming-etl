@@ -13,3 +13,13 @@ def validate_orders(df):
           .filter(col("quantity") > 0)
           .filter(col("price") > 0)
     )
+def get_invalid_orders(df):
+    return (
+        df.filter(
+            col("order_id").isNull() |
+            col("customer_id").isNull() |
+            col("product_id").isNull() |
+            (col("quantity") <= 0) |
+            (col("price") <= 0)
+        )
+    )
